@@ -1,0 +1,4 @@
+Server
+======
+
+Static server example.
