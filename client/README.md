@@ -1,7 +1,7 @@
 Client
 ======
 
-Front end project with angular.
+Front end project with various js solutions.
 
 Usage:
 

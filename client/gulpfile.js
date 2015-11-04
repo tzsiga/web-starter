@@ -16,7 +16,7 @@ var dir = Object.create(null);
 dir.src = Object.create(null);
 dir.src.root = __dirname + '/src/';
 dir.src.html = dir.src.root + 'html/';
-dir.src.scss = dir.src.root + 'scss/';
+dir.src.scss = dir.src.root + 'css/';
 dir.src.js = dir.src.root + 'js/';
 dir.src.lib = [
   __dirname + '/node_modules/angular/angular.js',

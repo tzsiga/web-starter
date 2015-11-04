@@ -1,10 +1,15 @@
-app.controller('LayoutController', LayoutController);
+(function(app) {
+  "use strict";
 
-LayoutController.$inject = [
-  '$scope',
-  'config'
-];
+  app.controller('LayoutController', LayoutController);
 
-function LayoutController ($scope, config) {
-  $scope.config = config;
-}
+  LayoutController.$inject = [
+    '$scope',
+    'config'
+  ];
+
+  function LayoutController ($scope, config) {
+    $scope.config = config;
+  }
+
+}(app));
