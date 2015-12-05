@@ -1,5 +1,5 @@
 (function(app) {
-  "use strict";
+  'use strict';
 
   app.constant('config', {
     'version': '0.0.3'

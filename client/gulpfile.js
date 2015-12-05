@@ -5,6 +5,7 @@ var util = require('gulp-util');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
+var eslint = require('gulp-eslint');
 var ngAnnotate = require('gulp-ng-annotate');
 var minifyHTML = require('gulp-minify-html');
 var sourcemaps = require('gulp-sourcemaps');
@@ -78,6 +79,14 @@ gulp.task('build:css', function () {
     .pipe(connect.reload());
 });
 
+gulp.task('lint', function () {
+  return gulp.src([files.js])
+    .pipe(plumber())
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
+
 gulp.task('build:js:angular', function () {
   return gulp.src([files.js])
     .pipe(plumber())
@@ -111,6 +120,7 @@ gulp.task('copy:img', function () {
 gulp.task('build', function (cb) {
   runSequence(
     'clean',
+    'lint',
     ['build:css', 'build:js:angular'],
     ['copy:html', 'copy:lib', 'copy:font', 'copy:img'],
     cb

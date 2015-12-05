@@ -1,5 +1,5 @@
 (function(app) {
-  "use strict";
+  'use strict';
 
   app.factory('crud', crud);
 
@@ -28,7 +28,7 @@
         if (response.data.success) {
           retrieval.resolve(response.data.result);
         } else {
-          retrieval.reject(Records.ErrorMessage(response.data.errorMessage));
+          retrieval.reject(response.data.errorMessage);
         }
       };
     }
